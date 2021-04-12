@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<JetView-Document Version="0" ObjectPoolVersion="3.0" ProductVersion="5.5.0.4333">
+<JetView-Document Version="19" ObjectPoolVersion="3.0" ProductVersion="5.5.0.4333">
 	<PropertySheets>
 		<PropertySheet Name="General">
 			<Property Name="ObjectID">
@@ -328,6 +328,58 @@
 			</PropertySheets>
 			<Objects>
 				<Object JVS-ID="9000"/>
+			</Objects>
+		</Component>
+		<Component ID="149825583" Class="CButton" Name="Button">
+			<PropertySheets>
+				<PropertySheet Name="General">
+					<Property Name="ZOrder">
+						<Value>8</Value>
+					</Property>
+				</PropertySheet>
+				<PropertySheet Name="Proxy">
+					<Property Name="Top">
+						<Value>380</Value>
+					</Property>
+					<Property Name="Left">
+						<Value>247</Value>
+					</Property>
+					<Property Name="Transform">
+						<Value>(1.0000000000000000)(0.0000000000000000)(247.0000000000000000)(0.0000000000000000)(1.0000000000000000)(380.0000000000000000)</Value>
+					</Property>
+					<Property Name="ReferencedObjectForMask">
+						<Value>-1</Value>
+					</Property>
+				</PropertySheet>
+			</PropertySheets>
+			<Objects>
+				<Object JVS-ID="6003"/>
+			</Objects>
+		</Component>
+		<Component ID="14078592" Class="CInputNumber" Name="Edit">
+			<PropertySheets>
+				<PropertySheet Name="General">
+					<Property Name="ZOrder">
+						<Value>9</Value>
+					</Property>
+				</PropertySheet>
+				<PropertySheet Name="Proxy">
+					<Property Name="Top">
+						<Value>173</Value>
+					</Property>
+					<Property Name="Left">
+						<Value>215</Value>
+					</Property>
+					<Property Name="Transform">
+						<Value>(1.0000000000000000)(0.0000000000000000)(215.0000000000000000)(0.0000000000000000)(1.0000000000000000)(173.0000000000000000)</Value>
+					</Property>
+					<Property Name="ReferencedObjectForMask">
+						<Value>-1</Value>
+					</Property>
+				</PropertySheet>
+			</PropertySheets>
+			<Objects>
+				<Object JVS-ID="9001"/>
 			</Objects>
 		</Component>
 	</Components>
