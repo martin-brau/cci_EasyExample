@@ -23,6 +23,7 @@
 #include "App_VTClientLev2.h"   // -> Object defines
 
 #include "MyProject1.iop.h"
+#include "MyProject1.c.h"
 #include "Settings/settings.h"
 
 #include "esp_log.h"
@@ -97,6 +98,21 @@ iso_u32 Gesamtzaehler = 0;
 iso_u32 Tagesziel = 0;
 iso_u32 Gesamtziel = 0;
 
+
+void check_erreicht(iso_u8 u8Instance){
+	if (Tageszaehler >= Tagesziel)
+		IsoVtcCmd_NumericValue(u8Instance, ObjectPointer_ziel, OutputString_ziel_err);
+	else
+		IsoVtcCmd_NumericValue(u8Instance, ObjectPointer_ziel, ID_NULL);
+
+	if (Gesamtzaehler >= Gesamtziel)
+		IsoVtcCmd_ObjHideShow(u8Instance, Container_ziel_erreicht, true);
+	else
+		IsoVtcCmd_ObjHideShow(u8Instance, Container_ziel_erreicht, false);
+}
+
+
+
 void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pButtonData) {
 
 	// what button was released
@@ -130,6 +146,11 @@ void VTC_handleSoftkeysAndButtons_RELEASED(const struct ButtonActivation_S *pBut
 	default:
 		break;
 	}
+
+
+	check_erreicht(pButtonData->u8Instance);
+
+
 	// Senden des Wertes der lokalen Variable Tageszaehler an die NumberVariable_Tageszaehler
 	IsoVtcCmd_NumericValue(pButtonData->u8Instance, NumberVariable_Tageszaehler, Tageszaehler);
 	// Senden des Wertes der lokalen Variable Gesamtzaehler an die NumberVariable_Gesamtzaehler
@@ -167,6 +188,9 @@ void VTC_handleNumericValues(const struct InputNumber_S * pInputNumberData) {
 	default:
 		break;
 	}
+
+
+	check_erreicht(pInputNumberData->u8Instance);
 }
 
 

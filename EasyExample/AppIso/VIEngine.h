@@ -33,6 +33,14 @@ struct InputNumber_S
 	iso_s16    iVtFunction;       /**< Last function of VT response (#ISOVT_FUNC_e) */
 	iso_u16    objectIdOfInputNumber;         /**< Depends of function/command */
 	iso_s32    newValue;
+    iso_u16          wPara1;            /**< \brief Unsigned short value 1 depending of command/activation message see table */
+    iso_u16          wPara2;            /**< \brief Unsigned short value 2 depending of command/activation message see table */
+    iso_u8           bPara;             /**< \brief Unsigned char value depending of command/activation message see table */
+    iso_u8           u8Instance;        /**< \brief Identifier of the client instance */
+    iso_s16          iErrorCode;        /**< \brief Error code of response messages or error code e. g. #E_CANMSG_MISSED */
+    iso_s32          lTimeSt;           /**< \brief Time stamp of received message */
+    const iso_u8*    pabVtData;         /**< \brief Data of VT e. g. string characters see table */
+    ISO_USER_PARAM_T userParam;         /**< \brief User parameter set with IsoVT_CreateInstance() */
 };
 
 struct InputString_S
